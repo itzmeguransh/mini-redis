@@ -1,0 +1,11 @@
+build/
+
+*.o
+
+server
+
+client
+
+.vscode/
+
+.idea/
