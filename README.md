@@ -199,7 +199,7 @@ Key not found
 
 ## Author
 
-**Guransh Singh**
+**Guransh Singh and Nitish Kalra**
 
 If you found this project interesting, feel free to star the repository.
 
