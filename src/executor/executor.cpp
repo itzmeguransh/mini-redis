@@ -1,9 +1,16 @@
 #include "executor.h"
 
-std::string Executor::execute(const Command& cmd)
+Executor::Executor(Database &db)
+    : database(db)
+{
+}
+
+std::string Executor::execute(const Command &cmd)
 {
     if (!cmd.valid)
+    {
         return cmd.error;
+    }
 
     if (cmd.command == "SET")
     {

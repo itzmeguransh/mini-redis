@@ -1,11 +1,14 @@
+# Build output
 build/
 
-*.o
+# Runtime database
+database.txt
 
-server
-
-client
-
+# VS Code
 .vscode/
 
-.idea/
+# Object files
+*.o
+
+# macOS
+.DS_Store

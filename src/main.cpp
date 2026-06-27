@@ -1,6 +1,7 @@
 #include "server/server.h"
 #include "parser/parser.h"
 #include "database/database.h"
+#include "executor/executor.h"
 
 #include <iostream>
 #include <thread>
@@ -8,8 +9,8 @@
 #include <unistd.h>
 
 void handleClient(Server &server,
-                  Database &database,
                   Parser &parser,
+                  Executor &executor,
                   int clientSocket)
 {
     while (true)
@@ -21,40 +22,14 @@ void handleClient(Server &server,
 
         Command cmd = parser.parse(message);
 
-        std::string response;
+        std::string response = executor.execute(cmd);
 
-      if (!cmd.valid)
-      {
-          response = cmd.error;
-      }
-      else if (cmd.command == "SET")
-      {
-          database.set(cmd.key, cmd.value);
-          response = "OK";
-      }
-      else if (cmd.command == "GET")
-      {
-          response = database.get(cmd.key);
-      }
-      else if (cmd.command == "DEL")
-      {
-          response = database.del(cmd.key) ? "1" : "0";
-      }
-      else if (cmd.command == "EXISTS")
-      {
-          response = database.exists(cmd.key) ? "1" : "0";
-      }
-      else
-      {
-          response = "Unknown Command";
-      }
+        server.sendMessage(clientSocket, response);
+    }
 
-      server.sendMessage(clientSocket, response);
-  }
+    close(clientSocket);
 
-  close(clientSocket);
-
-  std::cout << "Client disconnected.\n";
+    std::cout << "Client disconnected.\n";
 }
 
 int main()
@@ -62,6 +37,7 @@ int main()
     Server server;
     Parser parser;
     Database database;
+    Executor executor(database);
 
     if (!server.createSocket())
         return 1;
@@ -82,10 +58,10 @@ int main()
         std::thread(
             handleClient,
             std::ref(server),
-            std::ref(database),
             std::ref(parser),
-            clientSocket
-        ).detach();
+            std::ref(executor),
+            clientSocket)
+            .detach();
     }
 
     return 0;

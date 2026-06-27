@@ -3,16 +3,17 @@
 
 #include "../database/database.h"
 #include "../parser/parser.h"
-
 #include <string>
 
 class Executor
 {
 private:
-    Database database;
+    Database &database;
 
 public:
-    std::string execute(const Command& command);
+    Executor(Database &db);
+
+    std::string execute(const Command &cmd);
 };
 
 #endif
