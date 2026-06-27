@@ -204,11 +204,11 @@ Key not found
 If you found this project interesting, feel free to star the repository.
 
 
-## What I Learned
+## What We Learned
 
-Building this project helped me understand how real-world systems such as Redis work internally. Instead of relying on external libraries, I implemented the networking, command parsing, multithreading, synchronization, and persistence mechanisms from scratch.
+Building this project helped us understand how real-world systems such as Redis work internally. Instead of relying on external libraries, we implemented the networking, command parsing, multithreading, synchronization, and persistence mechanisms from scratch.
 
-Some of the major concepts I explored during this project include:
+Some of the major concepts we explored during this project include:
 
 - TCP client-server communication
 - Concurrent request handling using threads
@@ -218,7 +218,7 @@ Some of the major concepts I explored during this project include:
 - Persistent storage and recovery
 - Modular software architecture using C++
 
-This project significantly improved my understanding of systems programming and modern C++.
+This project significantly improved our understanding of systems programming and modern C++.
 
 
 ## Screenshots
