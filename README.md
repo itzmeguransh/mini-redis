@@ -225,7 +225,7 @@ This project significantly improved our understanding of systems programming and
 
 ### Server
 
-![Server](screenshots/server__running.png)
+![Server](screenshots/serverrunning.png)
 
 ---
 
@@ -237,7 +237,7 @@ This project significantly improved our understanding of systems programming and
 
 ### Multiple Clients
 
-![Multiple Clients](screenshots/multi_client.png)
+![Multiple Clients](screenshots/multiclient.png)
 
 ---
 
