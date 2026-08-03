@@ -15,7 +15,6 @@ The primary goal of this project was to understand how high-performance in-memor
 - Automatic persistence to disk
 - Automatic database recovery on server startup
 - Custom command parser with input validation
-- Modular architecture following separation of concerns
 - Built using CMake
 
 ---
