@@ -184,18 +184,6 @@ Key not found
 
 ---
 
-## Future Improvements
-
-- PING command
-- KEYS command
-- TTL support
-- RESP protocol compatibility
-- Logging system
-- Benchmarking
-- Unit testing
-
----
-
 ## Author
 
 **Nitish Kalra and Guransh Singh**
